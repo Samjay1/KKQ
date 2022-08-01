@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="/public/images/logo.png" sizes="16x16">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' type='text/css' href='../public/css/style.css'>
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
+
+    <title>Kizomba - Login</title>
+</head>
+<body style="font-family: 'Roboto', sans-serif;" class="bg-white relative">
+    <div class="w-4/5 lg:w-3/12 m-auto mt-10 my-7">
+        <%if(message){%>
+            <div class="bg-green-100 rounded-lg py-5 px-6 mb-4 text-xl font-bold text-center text-green-700 mb-3" role="alert">
+                Registration Successful!
+            </div>
+        <%}else if(message == null){%>
+            <div></div>
+        <%}else{%>
+            <div class="bg-red-100 rounded-lg py-5 px-6 mb-4 text-xl font-bold text-center text-red-700 mb-3" role="alert">
+                Oops! <%=info%> 
+            </div>
+        <%}%>
+       
+        <h2 class="text-3xl font-bold text-center">Log In</h2>
+        <div class="font-normal text-sm text-center mb-6">
+            <p>Log in to your account </p>
+            <p>Would you like to create a new account? <a class="text-blue-900 hover:text-blue:400 underline" href="/student/register">Sign up</a></p>
+        </div>
+        <form action="/student/login" method="POST">
+                <div class="  mt-2 w-full">
+                    <p class="mx-2">Email</p>
+                    <input class="border border-slate-300 w-72 lg:w-full mx-2  rounded-md py-2 pl-3   shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" type="email" id="email" name="email" placeholder="Enter email address" required>
+                 </div>
+                 <div class="  mt-4 w-full">
+                    <p class="mx-2">Password</p>
+                    <input class="border border-slate-300 w-72 mx-2 lg:w-full rounded-md py-2 pl-3   shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" type="password" id="password" name="password" placeholder="Password" required>
+                 </div> 
+
+                 <p class="text-right mt-3"><a class="text-blue-900 hover:underline" href="/forgotpassword">Forgot your password?</a></p>
+            <div class="text-center px-3 mt-3"> 
+                <input class="px-10 py-2 w-full mx-2 mt-2 ml-0 bg-blue-900 hover:bg-blue-700 text-sm text-white rounded" type="submit" value="Log In"/>
+           </div>
+        </form>
+        <p class="text-center text-blue-900 my-3 px-3"><a href="/" class=" border border-blue-900 hover:border-black hover:text-black duration-300 transition text-sm rounded py-1 px-3 w-full inline-block">Homepage</a></p>
+    </div>
+ 
+
+</body>
+</html>

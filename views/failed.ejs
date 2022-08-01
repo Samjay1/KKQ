@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="/public/images/logo.png" sizes="16x16">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="public/images/logo.png" sizes="16x16">
+    <link rel='stylesheet' type='text/css' href='../public/css/style.css'>
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet"> -->
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com"> -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>  
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/public/css/index.min.css" />
+
+    <title>Kizomba - Home</title>
+</head>
+<body style="font-family: 'Roboto', sans-serif;" class="bg-gray-100 font-normal relative">
+    
+    <nav class="bg-white shadow-lg">
+        <!-- Mobile menu -->
+        <div class="flex justify-between">
+           
+            <div class="h-20 p-1 flex space-x-10">
+                <a class="" href="/">
+                    <img class="h-20 object-fill w-36 bg-white p-2 m-3 rounded-b-3xl mb-0" src="/public/images/logo.png" alt="">
+                </a>
+            </div>
+            <div class="p-2 py-3 h-16 flex space-x-8  mt-1 ">
+                <a class="lg:block hidden px-3 py-2 text-blue-900 border-b border-blue-900 hover:bg-blue-900 hover:border-white hover:text-white transition duration-300 hover:rounded text-sm" href="/#affiliate">Become an Affiliate</a>
+                <a class="lg:block hidden px-3 py-2 text-blue-900 border-b border-blue-900 hover:bg-blue-900 hover:border-white hover:text-white transition duration-300 hover:rounded text-sm" href="/#contact">Contact</a> 
+                <a class="lg:block hidden px-3 py-2 text-blue-900 border-b border-blue-900 hover:bg-blue-900 hover:border-white hover:text-white transition duration-300 hover:rounded text-sm" href="/courses">Courses</a>
+                
+                <div class=" inline-flex relative w-fit">
+                    <div class="absolute mt-2 inline-block top-0 right-0 bottom-auto left-auto translate-x-2/4 -translate-y-1/2 rotate-0 skew-x-0 skew-y-0 scale-x-100 scale-y-100 py-2 px-2.5 text-xs leading-none text-center whitespace-nowrap align-baseline font-bold bg-blue-900 text-white rounded-full z-10"><%=cart.length%></div>
+                    <div class="px-1 border-b border-white  hover:border-blue-900  flex items-center justify-center text-center">
+                      <div>
+                        <a class="rounded-3xl flex-1 text-blue-900  block" href="/cart">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                              </svg>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                <hr class="lg:block hidden border border-blue-900  h-full">
+                 <%if(user){%>
+                  <%if(user.image === '' || user.image === null){%>
+                    <a class="lg:block hidden px-3 py-2  text-blue-900 border-blue-900 hover:bg-blue-900 hover:border-white hover:text-white transition duration-300 hover:rounded text-sm" href="/student/dashboard">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </a>
+                  <%}else{%>
+                    <a class="lg:block hidden" href="/student/dashboard">
+                      <img id="profileimg" class="h-9 w-9 my-1 object-cover shadow-lg object-top rounded-3xl" src="/<%=user.image%>" alt="">
+                    </a>
+                  <%}%> 
+                 <%}else{%>
+                  <a class="lg:block hidden border-b px-3 py-2  text-blue-900 border-blue-900 hover:bg-blue-900 hover:border-white hover:text-white transition duration-300 hover:rounded text-sm" href="/student/login">Log In</a>
+                  <a class="lg:block hidden border px-3 py-2 text-blue-900 border-blue-900 hover:bg-blue-900 hover:border-white hover:text-white transition duration-300 rounded-md text-sm" href="/student/register">Sign Up</a>
+                  <%}%>
+                <!-- <a id="profilebtn" class="bg-gray-300 rounded-3xl shadow-lg  block" href="#"><img id="profileimg" class="h-9 w-9 object-cover object-top rounded-3xl" src="/public/images/d1.jpeg" alt=""></a> -->
+                <a id="profilebtn" class="text-blue-900 block lg:hidden mt-3" href="#">
+                    <svg id="profileimg" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path id="profileimg" stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                      </svg>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <!-- PROFILE DROPDOWN -->
+    <div class="relative">
+        <div id="menulist" class="absolute hidden  space-y-1 right-0 border w-56 bg-white  mx-1 my-1 rounded-lg">
+
+           <p class="border-b w-full py-2  rounded-t-lg hover:bg-blue-900 hover:text-white"><a class="px-2 pr-6 py-2" href="/#affiliate"> Become an Affiliate</a></p>
+           <p class="border-b w-full py-2 hover:bg-blue-900 hover:text-white"><a class="px-2 pr-6 py-2" href="/#contact"> Contact us</a></p>
+           <p class="border-b w-full py-2 bg-blue-900 text-white"><a class="px-2 pr-6 py-2" href="/courses"> Courses</a></p>
+           <%if(user){%>
+           <p class="border-b w-full py-2 rounded-b-lg hover:bg-blue-900 hover:text-white"><a class="px-2 pr-6 py-2" href="/student/dashboard"> My profile</a></p>
+           <%}else{%>
+            <p class="border-b w-full py-2 hover:bg-blue-900 hover:text-white"><a class="px-2 pr-6 py-2"  href="/student/login"> Log in</a></p>
+            <p class="border-b w-full py-2 rounded-b-lg hover:bg-blue-900 hover:text-white"><a class="px-2 pr-6 py-2"  href="/student/register"> Sign up</a></p> 
+            <%}%>
+           
+           
+        </div>
+    </div>
+  
+    <main class=" md:w-3/5 w-4/5 m-auto py-5 my-4 mt-6">
+       
+        
+
+        <!-- FEATURED COURSES -->
+         <!-- COURSE LIST -->
+        <div class="border lg:w-1/2 m-auto rounded-xl p-5 shadow-lg text-center">
+            <div class="bg-red-100 rounded-lg py-5 px-6 mb-4 text-xl font-bold text-center text-red-700 mb-3" role="alert">
+                 <%=message%>
+            </div>
+            <p>Please try again.</p>
+            <p class="mt-5"><a href="/#contact" class="bg-blue-800 p-2 px-3 rounded text-white ">Try again</a></p>
+        </div>
+        
+    </main>
+
+    <!-- FOOTER SECTION -->
+    <footer class="bg-gray-800 text-white mt-24 py-4 font-normal pt-10 px-6">
+        <div class="grid grid-cols-2 md:grid-cols-4  gap3  md:w-3/5 w-4/5 m-auto">
+            <div class="col-span-1  space-y-1 text-xs mb-4">             
+                <p class="text-2xl pb-2 font-semibold"><a href="/">KIZOMBA</a></p> 
+                <p><a >King & Queen</a></p>
+                <p><a href="#" class="hover:underline">Privacy Policy</a></p>
+                <p><a href="#" class="hover:underline">Terms of Use</a></p>
+            </div>
+
+            <div class="col-span-1 text-xs space-y-1">             
+                <p class="text-sm  mt-3 underline pb-2 font-semibold">Quick Links</p> 
+                <p><a href="/" class="hover:underline">Our Courses</a></p>
+                <p><a href="#" class="hover:underline">Join us</a></p>
+                <p><a href="#" class="hover:underline">Become an Affiliate</a></p>
+            </div>
+
+            <div class="col-span-1 text-xs space-y-1">             
+                <p class="text-sm  mt-3 underline pb-2 font-semibold">Social Media</p> 
+                <p><a href="/" class="hover:underline">Facebook</a></p>
+                <p><a href="#" class="hover:underline">Instagram</a></p>
+                <p><a href="#" class="hover:underline">Twitter</a></p>
+                <p><a href="#" class="hover:underline">YouTube</a></p>
+            </div>
+
+            <div class="col-span-1 text-xs space-y-1">             
+                <p class="text-sm  mt-3 underline pb-2 font-semibold">Newsletter</p> 
+                <p><a href="/" class="hover:underline">Subscribe to our newsletter</a></p>
+                <form action="/subscribe" method="POST">
+                    <div class="mt-2 w-full">
+                        <input class="border border-slate-300 lg:w-full text-black rounded-md py-2 pl-3   shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" type="email" id="email" name="email" placeholder="Email" required>
+                     </div>
+                <div class="text-center mt-0">
+                    <input class="px-5 py-2 w-full mt-2  bg-blue-900 hover:bg-blue-700 text-sm text-white rounded" type="submit" value="Subscribe"/>
+               </div>
+            </form>
+            </div>
+        </div>
+         <!-- Copywrite info -->
+        <div class="text-center  text-xs font-normal my-3">
+            <p>&copy; 2022 Kizomba King & Queen. </p>
+            <p>All rights reserved | Product of <a class="text-blue-500 hover:underline" href="https://wewritetech.com/">WeWrite Technologies</a></p>
+        </div>
+    </footer>
+
+    <script src="/public/js/index.min.js"></script>
+    <script src="/public/js/script.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script> -->
+</body>
+</html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="/public/images/logo.png" sizes="16x16">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' type='text/css' href='../public/css/style.css'>
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
+
+    <title>Kizomba - Student</title>
+</head>
+<body style="font-family: 'Roboto', sans-serif;" class="bg-gray-100 relative">
+    <div class="relative min-h-screen md:flex">
+        <!-- mobile menu bar -->
+        <div class="md:hidden flex justify-between  border-l-8 border-blue-600  bg-white  text-white">
+              <!-- logo -->
+              <a class="" href="/">
+                <img class="h-24 bg-white p-2 m-3 rounded-b-3xl mb-0" src="/public/images/logo.png" alt="">
+            </a>
+
+            <div class="flex">
+                <!-- menu button -->
+                <button class="focus:outline-none border border-white focus:border-blue-600 mobile-menu-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 self-center text-blue-600 m-2 " fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                      </svg>
+                </button>
+            </div>
+            
+            
+        </div>
+
+        <!-- sidebar -->
+        <div class="sidebar bg-white text-blue-100 w-64 absolute md:relative inset-y-0 left-0 transform -translate-x-full md:translate-x-0 transition duration-300 ease-in-out">
+           <!-- logo -->
+          <a class="" href="/">
+            <img class="h-24 bg-white p-2 m-3 rounded-b-3xl mb-0 m-auto" src="/public/images/logo.png" alt="">
+        </a>
+
+            <!-- nav -->
+        <nav class="mt-5 text-black">
+                
+                <a href="/student/dashboard" class="py-2 px-5 flex  rounded-md mx-2 hover:text-white hover:bg-blue-900  transition duration-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                      </svg>
+                    <span class="px-4">Dashboard</span></a>
+                <hr class="mx-5">
+                <a href="/student/courses" class="flex mt-2 py-2 px-5 rounded-md mx-2 hover:text-white hover:bg-blue-900 transition duration-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                      </svg>
+                      <span class="px-4">My Courses</span></a>
+                <hr class="mx-5">
+                <a href="/student/wishlist" class="flex mt-2 py-2 px-5 rounded-md mx-2 hover:text-white hover:bg-blue-900 transition duration-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                      </svg>
+                      <span class="px-4">Wishlist</span></a>
+                <hr class="mx-5">
+               <a href="/student/cart" class="flex mt-2 py-2 px-5 rounded-md mx-2 hover:text-white hover:bg-blue-900 transition duration-400 ">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                      <span class="px-4 flex-1">Cart</span>
+                       <span class="py-1 px-2 rounded-xl font-normal text-white text-sm flex-2" style="font-size: 0.8em; background-color: rgb(254, 111, 2)"><%=cart.length%></span>
+                </a>
+                <hr class="mx-5">
+                <a href="/student/referrals" class="flex mt-2 py-2 px-5 rounded-md mx-2 text-white bg-blue-900 hover:text-white hover:bg-blue-900 transition duration-400 ">
+                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                  </svg>
+                      <span class="px-4 flex-1">Referrals</span>
+                </a>
+                <hr class="mx-5">
+                <a href="/student/withdrawals" class="flex mt-2 py-2 px-5 rounded-md mx-2 hover:text-white hover:bg-blue-900 transition duration-400 ">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
+                      </svg>
+                      <span class="px-4 flex-1">Withdrawals</span>
+                </a>
+              <hr class="mx-5">
+                <a href="/student/messages" class="flex mt-2 py-2 px-5 rounded-md mx-2 hover:text-white hover:bg-blue-900 transition duration-400 ">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                      </svg>
+                        <span class="px-4 flex-1">Messages</span>
+                         <span class="py-1 px-2 rounded-xl font-normal text-white text-sm flex-2" style="font-size: 0.8em; background-color: rgb(254, 111, 2)"><%=counts.message_count%></span>
+                   
+                      </a>
+                <hr class="mx-5">
+                <a href="/student/notification" class="flex mt-2 py-2 px-5 rounded-md mx-2 hover:text-white hover:bg-blue-900 transition duration-400 ">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                  </svg>
+                      <span class="px-4 flex-1">Notification</span>
+                       <span class="py-1 px-2 rounded-xl font-normal text-white text-sm flex-2" style="font-size: 0.8em; background-color: rgb(254, 111, 2)"><%=counts.notification_count%></span>
+                 
+                    </a>                 
+                <hr class="mx-5">
+                <a href="/student/support" class="flex mt-2 py-2 px-5 rounded-md mx-2 hover:text-white hover:bg-blue-900 transition duration-400 ">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                        <span class="px-4 flex-1">Support</span>
+                      </a>
+                <hr class="mx-5">
+                <a href="/student/settings" class="flex mt-2 py-2 px-5 rounded-md mx-2 hover:text-white hover:bg-blue-900 transition duration-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                      </svg>
+                      <span class="px-4"> Settings</span>
+                </a>
+                <hr class="mx-5">
+                <a href="/student/login" class="py-2 mt-2 px-5 flex rounded-md mx-2 hover:text-white hover:bg-blue-900 transition duration-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
+                      </svg> 
+                    <span class="px-4">Logout</span>
+                </a>
+                <hr class="mx-5">
+            </nav>
+        </div>
+         
+        <div class="flex-1 pt-3 text-2xl font-bold">
+            <div class=" py-4 px-5 flex justify-between">
+                <p class="font-normal">Referrals</p>
+                <form class="border rounded-xl bg-gray-200 border border-gray-300 md:px-2  py-0 pb-1 mb-3">
+                    <input type="text" placeholder="Search" class="focus:outline-none bg-gray-200 text-sm  py-0 pl-2  m-0 font-thin">
+                    <button type="submit" class="self-center rounded-2xl focus:outline-none text-black hover:bg-gray-300 p-2 ml-0 mt-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>    
+                    </button>
+                </form>
+            </div>
+
+<!-- MAIN CONTENT GOES HERE -->
+            <main class="mx-4 mb-5">
+
+                <!-- DASHBOARD CARDS -->
+                <div class="grid grid-cols-1 gap-3 font-normal  md:grid-cols-4 py-4 text-gray-200">
+                   
+                     <!-- Referrals card -->
+                     <div class="p-4 text-sm rounded-xl" style="background-color: rgb(106, 175, 3);">
+                        <p>Total Referrals</p>
+                        <p  class="text-3xl"><%=referrals.length%></p>
+                        <p>
+                            <a class="flex hover:text-gray-900" href="#referral">see more <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 my-1 ml-3 " viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                              </svg> 
+                        </a></p>
+                    </div>
+
+                     <!-- Active referrals  card -->
+                     <div class="bg-purple-700 p-4 text-sm rounded-xl">
+                        <p>Active Referrals</p>
+                        <p  class="text-3xl">
+                            <%=referrals.filter((value)=> value.earned!==0).length%>
+                        </p>
+                        <!-- <p><a class="flex hover:text-gray-900" href="active-referrals.html">see more <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 my-1 ml-3 " viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                          </svg> </a></p> -->
+                    </div>
+
+                     <!-- EARNINGS CARD -->
+                <div class="flex bg-white font-normal p-4 py-0 rounded-2xl space-x-2 shadow-lg md:w-96">
+                    <div class=" md:block w-1/2   rounded-2xl h-28">
+                        <img id="profileimg" class="h-full w-full object-cover rounded-2xl" src="/public/images/c2.webp" alt=""/>
+                    </div>
+                    <div class="space-y-2 p-2 ">
+                        <p class="text-xs text-gray-400">Total Earnings</p>
+                        <p class="text-sm text-purple-800">Ghs <span class="text-2xl"><%=balance%></span></p>
+                        <p class="text-sm "><a class="flex bg-blue-800 text-white py-1 pt-2 px-3 rounded-3xl hover:bg-blue-900" href="#">Withdraw <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 my-1 ml-3 " viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                          </svg> </a></p>
+                    </div>
+                </div>
+
+                </div>
+
+                <!-- COMMISSION CARD -->
+                <div class="flex justify-between rounded-2xl bg-blue-700 h-auto font-normal">
+                    <div class="p-4 text-gray-200">
+                        <p>Get 5% Commissions</p>
+                        <p class="text-sm">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus repellendus, 
+                            cumque quos possimus itaque odio? Reprehenderit quidem, commodi ratione
+                            xcepturi quasi? Doloremque, quae!
+                        </p>
+                        <div class="flex flex-wrap text-sm space-y-1 mt-4">
+                            <p class="text-md py-1 mr-3">Copy and share this link</p>
+                            <p><a class="bg-white text-purple-900 py-1 px-4  rounded-2xl">https://Kizombakingandqueen.com/<%=affiliate_code%></a></p>
+                        </div>
+                    </div>
+                    <div class="hidden md:block w-4/5 h-44">
+                        <img id="profileimg" class="h-full w-full object-cover rounded-r-2xl" src="/public/images/coin.png" alt=""/>
+                    </div>
+                </div>
+
+                <!-- REFERRALS TABLE -->
+                <p class="font-normal mt-10 z-0  text-lg ml-2 border-b border-blue-900 text-blue-900">All Referrals Table</p>
+                <%if(referrals.length!==0){%>
+                 <div id="referral" class=" overflow-x-auto mt-10 font-normal shadow-lg rounded-t-2xl">
+                        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                            <thead class="text-xs text-blue-900 uppercase bg-blue-50 dark:bg-gray-700 dark:text-gray-400">
+                                <tr>
+                                    <th scope="col" class="px-6 py-3">
+                                        Firstname
+                                    </th>
+                                    <th scope="col" class="px-6 py-3">
+                                        Lastname
+                                    </th>
+                                    <th scope="col" class="px-6 py-3">
+                                        Earned (GHS)
+                                    </th>
+                                    <th scope="col" class="px-6 py-3">
+                                        Date created
+                                    </th>
+                                    <th scope="col" class="px-6 py-3">
+                                        Status
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                    <%referrals.forEach((value)=>{%>
+                                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
+                                                <%=value.firstname%>
+                                            </th>
+                                            <td class="px-6 py-4">
+                                                <%=value.lastname%>
+                                            </td>
+                                            <td class="px-6 py-4">
+                                                $<%=value.earned%>
+                                            </td>
+                                            <td class="px-6 py-4">
+                                                <%=value.date%>
+                                            </td>
+                                            <td class="px-6 py-4">
+                                            <%if(value.earned!==0){%>
+                                                    ACTIVE
+                                            <%}else{%>
+                                                    INACTIVE
+                                                <%}%>
+                                            </td>
+                                        </tr>
+                                    <%})%>
+                            </tbody>
+                        </table>
+                </div>
+                <%}else{%>
+                    <p class="text-3xl mx-2 font-normal">No Referrals Available</p>
+                <%}%>
+
+            </main>
+<!-- END MAIN CONTENT GOES HERE -->
+
+
+        </div>
+    </div>
+    <footer class="py-5 text-sm bg-white shadow-lg border-b-8 border-blue-900">
+                <div class="text-center font-medium ">
+            <p>&copy; 2022 Kizomba King & Queen. </p>
+            <p>All rights reserved | Product of <a class="text-blue-800 hover:underline" href="https://wewritetech.com/">WeWrite Technologies</a></p>
+        </div>
+    </footer>
+        
+    <script src="../public/js/nav.js"></script>
+</body>
+</html>

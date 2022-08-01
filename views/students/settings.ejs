@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="/public/images/logo.png" sizes="16x16">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' type='text/css' href='../public/css/style.css'>
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Kizomba - Student</title>
+</head>
+<body style="font-family: 'Roboto', sans-serif;" class="bg-gray-100 relative">
+    <div class="relative min-h-screen md:flex">
+        <!-- mobile menu bar -->
+        <div class="md:hidden flex justify-between  border-l-8 border-blue-600  bg-white  text-white">
+              <!-- logo -->
+              <a class="" href="/">
+                <img class="h-24 bg-white p-2 m-3 rounded-b-3xl mb-0" src="/public/images/logo.png" alt="">
+            </a>
+
+            <div class="flex">
+                <!-- menu button -->
+                <button class="focus:outline-none border border-white focus:border-blue-600 mobile-menu-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 self-center text-blue-600 m-2 " fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                      </svg>
+                </button>
+            </div> 
+        </div> 
+        <!-- sidebar -->
+        <div class="sidebar bg-white text-blue-100 w-64 absolute md:relative inset-y-0 left-0 transform -translate-x-full md:translate-x-0 transition duration-300 ease-in-out">
+           <!-- logo -->
+          <a class="" href="/">
+            <img class="h-24 bg-white p-2 m-3 rounded-b-3xl mb-0 m-auto" src="/public/images/logo.png" alt="">
+        </a> 
+            <!-- nav -->
+             <nav class="mt-5 text-black">
+                
+                <a href="/student/dashboard" class="py-2 px-5 flex   rounded-md mx-2  hover:text-white hover:bg-blue-900 transition duration-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                      </svg>
+                    <span class="px-4">Dashboard</span></a>
+                <hr class="mx-5">
+                <a href="/student/courses" class="flex mt-2 py-2 px-5 rounded-md mx-2 hover:text-white hover:bg-blue-900 transition duration-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                      </svg>
+                      <span class="px-4">My Courses</span></a>
+                <hr class="mx-5">
+                <a href="/student/wishlist" class="flex mt-2 py-2 px-5 rounded-md mx-2 hover:text-white hover:bg-blue-900 transition duration-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                      </svg>
+                      <span class="px-4">Wishlist</span></a>
+                <hr class="mx-5">
+               <a href="/student/cart" class="flex mt-2 py-2 px-5 rounded-md mx-2 hover:text-white hover:bg-blue-900 transition duration-400 ">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                      <span class="px-4 flex-1">Cart</span>
+                       <span class="py-1 px-2 rounded-xl font-normal text-white text-sm flex-2" style="font-size: 0.8em; background-color: rgb(254, 111, 2)"><%=cart.length%></span>
+                </a>
+                <hr class="mx-5">
+                <a href="/student/referrals" class="flex mt-2 py-2 px-5 rounded-md mx-2 hover:text-white hover:bg-blue-900 transition duration-400 ">
+                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                  </svg>
+                      <span class="px-4 flex-1">Referrals</span>
+                </a>
+                <hr class="mx-5">
+                <a href="/student/withdrawals" class="flex mt-2 py-2 px-5 rounded-md mx-2 hover:text-white hover:bg-blue-900 transition duration-400 ">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
+                      </svg>
+                      <span class="px-4 flex-1">Withdrawals</span>
+                </a>
+              <hr class="mx-5">
+                <a href="/student/messages" class="flex mt-2 py-2 px-5 rounded-md mx-2 hover:text-white hover:bg-blue-900 transition duration-400 ">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                      </svg>
+                        <span class="px-4 flex-1">Messages</span>
+                         <span class="py-1 px-2 rounded-xl font-normal text-white text-sm flex-2" style="font-size: 0.8em; background-color: rgb(254, 111, 2)"><%=counts.message_count%></span>
+                   
+                      </a>
+                <hr class="mx-5">
+                <a href="/student/notification" class="flex mt-2 py-2 px-5 rounded-md mx-2 hover:text-white hover:bg-blue-900 transition duration-400 ">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                  </svg>
+                      <span class="px-4 flex-1">Notification</span>
+                       <span class="py-1 px-2 rounded-xl font-normal text-white text-sm flex-2" style="font-size: 0.8em; background-color: rgb(254, 111, 2)"><%=counts.notification_count%></span>
+                 
+                    </a>                 
+                <hr class="mx-5">
+                <a href="/student/support" class="flex mt-2 py-2 px-5 rounded-md mx-2 hover:text-white hover:bg-blue-900 transition duration-400 ">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                        <span class="px-4 flex-1">Support</span>
+                      </a>
+                <hr class="mx-5">
+                <a href="/student/settings" class="flex mt-2 py-2 px-5 bg-blue-900  text-white rounded-md mx-2 hover:text-white hover:bg-blue-900 transition duration-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                      </svg>
+                      <span class="px-4"> Settings</span>
+                </a>
+                <hr class="mx-5">
+                <a href="/student/login" class="py-2 mt-2 px-5 flex rounded-md mx-2 hover:text-white hover:bg-blue-900 transition duration-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
+                      </svg> 
+                    <span class="px-4">Logout</span>
+                </a>
+                <hr class="mx-5">
+            </nav>
+        </div>
+         
+        <div class="flex-1 pt-3 text-2xl font-bold">
+            <div class=" py-4 px-5 flex justify-start">
+                <p class="font-normal">Settings</p>
+                
+            </div>
+
+<!-- MAIN CONTENT GOES HERE -->
+            <main class="mx-4 mb-5 lg:w-2/4 w-full">
+                <!-- image upload -->
+                <form action="/student/upload_image" method="POST" class="inline-block" enctype="multipart/form-data">
+                    <div class="">
+                        <%if(user.image === '' || user.image === null){%>
+                            <img class="h-24 w-24 object-cover object-start rounded-xl" src="/public/images/d1.jpeg" alt="">
+                        <%}else{%>
+                            <img class="h-24 w-24 object-cover object-start rounded-xl" src="/<%=user.image%>" alt="">
+                        <%}%> 
+                    </div>
+                    <label class="block mt-2 font-normal">
+                        <span class="sr-only">Choose profile photo</span>
+                        <input id="upload" type="file" name="upload" class="block w-full text-sm text-slate-500
+                          file:mr-4 file:py-2 file:px-4
+                          file:rounded-full file:border
+                          file:text-sm file:font-semibold
+                          file:bg-blue-50 file:border-blue-900
+                           file:text-blue-900
+                          hover:file:bg-blue-100
+                          text-blue-900
+                        " required/>
+                      </label> 
+                      <input name="old_image" value="<%=user.image%>" hidden />
+                      <div id="btn_display">
+                      </div>
+                </form>
+
+
+                <form action="/student/update_names" method="POST">
+
+                <!-- profile info -->
+                <div class="pr-5">
+                    <div class="flex flex-wrap mt-4 text-sm lg:space-x-2  w-full my-2">
+                            <input class="border border-slate-300 flex-1 rounded-md py-2 pl-3 mt-2  shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" type="text" id="firstname" name="firstname" placeholder="Firstname" value="<%=user.firstname%>">
+                            <input class="border border-slate-300 flex-1 rounded-md py-2 pl-3 mt-2 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" type="text" id="lastname" name="lastname" placeholder="Lastname" value="<%=user.lastname%>">
+                    </div>
+                    <div class="lg:flex lg:flex-wrap mt-1 text-sm lg:space-x-2 w-full">
+                        <input class="border border-slate-300 lg:flex-1 w-full rounded-md py-2 pl-3 mt-2 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" type="text" id="country" name="country" placeholder="Country" value="<%=user.country%>" disabled>
+                        <input class="border border-slate-300 lg:flex-1 w-full rounded-md py-2 pl-3 mt-2 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" type="text" id="country" name="country" placeholder="Email" value="<%=user.email%>" disabled>
+                   </div>
+                   <input class="px-3 py-2 mt-2 bg-blue-900 hover:bg-blue-700 text-sm text-white rounded-md" type="submit" value="Update Profile"/>
+                </div>
+                </form>
+                   <!-- change password -->
+                   <div>
+                        <p class="mt-5 btn font-thin">Change Password</p>
+                   </div>
+                   <%if(state){%>
+                        <div class="bg-red-100 rounded-lg py-5 px-6 mb-4 text-xl font-bold text-center text-red-700 mb-3" role="alert">
+                            <%=message%> 
+                        </div>
+                    <%}else if(state===null){%>
+                        <div></div>
+                    <%}else{%>
+                        <div class="bg-green-100 rounded-lg py-5 px-6 mb-4 text-xl font-bold text-center text-green-700 mb-3" role="alert">
+                            <%=message%> 
+                        </div>
+                    <%}%>
+                   
+
+                   <form action="/student/update_password" method="POST" class="pr-5">
+                        <div class="w-full lg:w-3/4">
+                            <input class="w-full border border-slate-300 flex-1 rounded-md py-2 pl-3  shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" type="password" id="old_Password" name="password" placeholder="Old Password">
+                            <input class="w-full border border-slate-300 flex-1 rounded-md py-2 pl-3 my-2 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" type="password" id="new_Password" name="npassword" placeholder="New Password">
+                            <input class="w-full border border-slate-300 rounded-md py-2 pl-3  pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1  text-sm" type="password" id="confirm_password" name="cpassword" placeholder="Confirm Password">
+                        </div>
+                        <input class="px-3 py-2 mt-2 bg-blue-900 hover:bg-blue-700 text-sm text-white rounded-md" type="submit" value="Change Password"/>
+                   </form>
+
+                   <div class="pr-5">
+                        <p class="mt-5 btn font-normal">Delete Account</p>
+                        <p class="font-normal text-sm">If you delete your account, your personal information will be wiped from KIZOMBA King and Queen servers,
+                            all of your course activity will be anonymized and deleted.
+                        </p>
+                        <p class="font-normal text-sm text-red-500">This action cannot be undone!</p>
+                        <a href="/student/delete/<%=user.id%>" class="px-3 py-2 mt-2 bg-red-600 hover:bg-red-700 text-sm text-white rounded-md" type="button">Delete Account</a>
+                   </div>
+              </main>       
+<!-- END MAIN CONTENT GOES HERE -->
+
+
+        
+        </div>
+    </div>
+    
+    <footer class="py-5 text-sm bg-white shadow-lg border-b-8 border-blue-900">
+        <div class="text-center font-medium ">
+            <p>&copy; 2022 Kizomba King & Queen. </p>
+            <p>All rights reserved | Product of <a class="text-blue-800 hover:underline" href="https://wewritetech.com/">WeWrite Technologies</a></p>
+        </div>
+    </footer>
+
+    <script src="../public/js/index.min.js"></script>
+    <script src="../public/js/nav.js"></script>
+    <script>
+        let upload = document.querySelector('#upload');
+        let btn_display = document.querySelector('#btn_display');
+ 
+        upload.addEventListener('change', (e)=>{ 
+            btn_display.innerHTML = `
+                      <input class="px-3 py-2 mt-2 bg-blue-900 hover:bg-blue-700 text-sm text-white rounded-md" type="submit" value="Change image"/>
+                      `
+        })
+    </script>
+</body>
+</html>
